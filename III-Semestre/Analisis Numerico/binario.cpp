@@ -5,17 +5,29 @@ using namespace std;
 typedef  double number;
 void bindecimal(number num)
 {
+	std::vector<pair<number,int>> v;
 	int entero=(int)num;
-	cout<<"este es el nuevo entero "<<entero<<endl;
+	cout<<"----------este es el nuevo entero---------- "<<entero<<endl;
 	number decimal=num-entero;
-	cout<<"parte decimal "<<decimal<<;
+	cout<<"-------------parte decimal---------- "<<decimal<<endl;
 	int enteroaux;
-	while (decimal!=0) {
-		decimal*=2;
+
+	bool periodico=false;
+
+	while (decimal!=0&&!periodico) {
+		decimal=decimal*2;
 		enteroaux=(int)decimal;
-		std::cout << "entero auxiliar"<<enteroaux << '\n';
-		decimal=decimal-entero;
+		std::cout << "entero auxiliar      "<<enteroaux << '\n';
+		v.push_back(make_pair(decimal,entero));
+
+		decimal=decimal-enteroaux;
 		std::cout << "decimal" << decimal<<'\n';
+		for (auto i:v) {
+			if (i.first=decimal) {
+				std::cout << "decimalsad;jksjdfjsdaf;lsad;lfjlsdkafjl"<<'\n';
+				periodico=true;
+			}
+		}
 	}
 }
 void binario(int num)
@@ -37,6 +49,6 @@ void binario(int num)
 int main(int argc, char const *argv[])
 {
 
-	bindecimal(1563.34);
+	bindecimal(0.2);
 	return 0;
 }
