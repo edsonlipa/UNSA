@@ -1,0 +1,1 @@
+g++ -o pru pro.cpp  -lm -lpthread -lX11
