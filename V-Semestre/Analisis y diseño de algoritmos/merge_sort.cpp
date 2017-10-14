@@ -11,7 +11,7 @@ void print_vector(vec v)
     cout <<i<< ",";}
     cout << "]\n";
 }
-void merge(vec &arr, int l, int m, int r)
+void merge(vec &arr, int l, int m, int r,int &count)
 {
     int i, j, k;
     int n1 = m - l + 1;
@@ -25,6 +25,7 @@ void merge(vec &arr, int l, int m, int r)
     i = 0;
     j = 0;
     k = l;
+
     while (i < n1 && j < n2)
     {
         if (L[i] <= R[j]){
@@ -36,6 +37,8 @@ void merge(vec &arr, int l, int m, int r)
             j++;
         }
         k++;
+        count++;
+        std::cout << "contando --------->"<< count << '\n';
     }
     while (i < n1)
     {
@@ -60,37 +63,38 @@ void write_file(vec arr){
   }
   myfile.close();
 }
-void mergeSort(vec &arr, int l, int r)
+void mergeSort(vec &arr, int l, int r,int &count)
 {
     if (l < r)
     {
         int m = l+(r-l)/2;
-        std::cout << "l: "<<l << '\n';
-        std::cout << "m: "<<m << '\n';
-        std::cout << "r: "<<r << '\n';
-        mergeSort(arr, l, m);
-        mergeSort(arr, m+1, r);
-
-        merge(arr, l, m, r);
-        write_file(arr);
+        // std::cout << "l: "<<l << '\n';
+        // std::cout << "m: "<<m << '\n';
+        // std::cout << "r: "<<r << '\n';
+        int count1=0;
+        int count2=0;
+        mergeSort(arr, l, m,count1);
+        std::cout << "contador1 "<<count << '\n';
+        mergeSort(arr, m+1, r,count2);
+        std::cout << "contador2 "<<count << '\n';
+        count+=count1+count2;
+        merge(arr, l, m, r,count);
+        // write_file(arr);
         print_vector(arr);
-        system("gnuplot plotmerge.gnp");
-
-
-
+        // system("gnuplot plotmerge.gnp");
     }
 }
 
 int main()
 {
-    vec arr{38,27,43,3,9,82,10};
+    vec arr{38,27,43,3,9,11,10,20};
     int arr_size = arr.size();
 
     printf("Given array is \n");
     print_vector(arr);
-
-    mergeSort(arr, 0, arr_size - 1);
-
+    int contador=0;
+    mergeSort(arr, 0, arr_size - 1,contador);
+    std::cout << "contador final"<<contador << '\n';
     printf("\nSorted array is \n");
     print_vector(arr);
     return 0;

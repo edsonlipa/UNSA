@@ -13,38 +13,38 @@ typedef vector<pair<number,vector<number>>> funcion;
 
 void llenarcoordenadas(lista &coordenadas)
 {
-	coordenadas[0]['x']=0;
-	coordenadas[0]['y']=sin(0);
+	// coordenadas[0]['x']=0;
+	// coordenadas[0]['y']=sin(0);
+	//
+	// coordenadas[1]['x']=0.3;
+	// coordenadas[1]['y']=sin(0.3);
+	//
+	// coordenadas[2]['x']=0.6;
+	// coordenadas[2]['y']=sin(0.6);
+	//
+	// coordenadas[3]['x']=0.9;
+	// coordenadas[3]['y']=sin(0.9);
+	//
+	// coordenadas[4]['x']=1.2;
+	// coordenadas[4]['y']=sin(1.2);
+	//
+	// coordenadas[5]['x']=1.5;
+	// coordenadas[5]['y']=sin(1.2);
+	//
+		coordenadas[0]['x']=-2;
+		coordenadas[0]['y']=1;
 
-	coordenadas[1]['x']=0.3;
-	coordenadas[1]['y']=sin(0.3);
+		coordenadas[1]['x']=-1;
+		coordenadas[1]['y']=0;
 
-	coordenadas[2]['x']=0.6;
-	coordenadas[2]['y']=sin(0.6);
+		coordenadas[2]['x']=2;
+		coordenadas[2]['y']=3;
 
-	coordenadas[3]['x']=0.9;
-	coordenadas[3]['y']=sin(0.9);
+		coordenadas[3]['x']=3;
+		coordenadas[3]['y']=1;
 
-	coordenadas[4]['x']=1.2;
-	coordenadas[4]['y']=sin(1.2);
-
-	coordenadas[5]['x']=1.5;
-	coordenadas[5]['y']=sin(1.2);
-		//
-		// coordenadas[5]['x']=1.8;
-		// coordenadas[5]['y']=sin(1.8);
-		//
-		// coordenadas[5]['x']=2.1;
-		// coordenadas[5]['y']=sin(2.1);
-		//
-		// coordenadas[5]['x']=2.4;
-		// coordenadas[5]['y']=sin(2.4);
-		//
-		// coordenadas[5]['x']=2.7;
-		// coordenadas[5]['y']=sin(2.7);
-		//
-		// coordenadas[5]['x']=3;
-		// coordenadas[5]['y']=sin(3);
+		coordenadas[4]['x']=5;
+		coordenadas[4]['y']=-1;
 
 
 	cout<<"\tPuntos iniciales dados"<<endl;
@@ -169,12 +169,13 @@ int main(int argc, char** argv)
 {
 	funcion funciondeCoordenadas;
 
-	lista coordenadas(40);
-	// llenarcoordenadas(coordenadas);
-	llenarcoordenadas(coordenadas,0,20,0.5);
+	// lista coordenadas(40);
+	lista coordenadas(5);
+	llenarcoordenadas(coordenadas);
+	// llenarcoordenadas(coordenadas,0,20,0.5);
 	funciondeCoordenadas=Ilagramge_generate(coordenadas);
 	pinrtfunction(funciondeCoordenadas);
 
-	llenararchivo(funciondeCoordenadas,-5,30);
+	// llenararchivo(funciondeCoordenadas,-5,30);
 	return 0;
 }

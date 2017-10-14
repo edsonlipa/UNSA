@@ -17,30 +17,44 @@ void llenarcoordenadas(lista &coordenadas)
 {
 	std::map<char, number> temp;
 
-	temp['x']=1;
-	temp['y']=2*cos((3.14159/2)*1);
-	coordenadas.push_back(temp);
-	temp['x']=2;
-	temp['y']=2*cos((3.14159/2)*2);
-	coordenadas.push_back(temp);
-	temp['x']=3;
-	temp['y']=2*cos((3.14159/2)*3);
-	coordenadas.push_back(temp);
-	temp['x']=4;
-	temp['y']=2*cos((3.14159/2)*4);
-	coordenadas.push_back(temp);
-	temp['x']=5;
-	temp['y']=2*cos((3.14159/2)*5);
-	coordenadas.push_back(temp);
-	temp['x']=6;
-	temp['y']=2*cos((3.14159/2)*6);
-	coordenadas.push_back(temp);
-	temp['x']=7;
-	temp['y']=2*cos((3.14159/2)*7);
-	coordenadas.push_back(temp);
-	temp['x']=8;
-	temp['y']=2*cos((3.14159/2)*8);
-	coordenadas.push_back(temp);
+	// temp['x']=1;
+	// temp['y']=2*cos((3.14159/2)*1);
+	// coordenadas.push_back(temp);
+	// temp['x']=2;
+	// temp['y']=2*cos((3.14159/2)*2);
+	// coordenadas.push_back(temp);
+	// temp['x']=3;
+	// temp['y']=2*cos((3.14159/2)*3);
+	// coordenadas.push_back(temp);
+	// temp['x']=4;
+	// temp['y']=2*cos((3.14159/2)*4);
+	// coordenadas.push_back(temp);
+	// temp['x']=5;
+	// temp['y']=2*cos((3.14159/2)*5);
+	// coordenadas.push_back(temp);
+	// temp['x']=6;
+	// temp['y']=2*cos((3.14159/2)*6);
+	// coordenadas.push_back(temp);
+	// temp['x']=7;
+	// temp['y']=2*cos((3.14159/2)*7);
+	// coordenadas.push_back(temp);
+	// temp['x']=8;
+	// temp['y']=2*cos((3.14159/2)*8);
+	// coordenadas.push_back(temp);
+	coordenadas[0]['x']=-2;
+	coordenadas[0]['y']=1;
+
+	coordenadas[1]['x']=-1;
+	coordenadas[1]['y']=0;
+
+	coordenadas[2]['x']=2;
+	coordenadas[2]['y']=3;
+
+	coordenadas[3]['x']=3;
+	coordenadas[3]['y']=1;
+
+	coordenadas[4]['x']=5;
+	coordenadas[4]['y']=-1;
 
 	cout<<"\tPuntos iniciales dados"<<endl;
  for (int i = 0; i < coordenadas.size(); ++i)
@@ -121,7 +135,7 @@ funcion generateF_INewton(lista coordenadas)
 		}
 	}
 	print(coeficientes);
-	// print(matriz);
+	print(matriz);
 	fun=make_pair(coeficientes,coordenadas);
 	return fun;
 }
@@ -156,11 +170,13 @@ int main(int argc, char *argv[])
 {
 
 	// lista coordenadas;
-	// llenarcoordenadas(coordenadas);
-	lista coordenadas(40);
-	llenarcoordenadas(coordenadas,0,20,0.5);
+	lista coordenadas(5);
+	llenarcoordenadas(coordenadas);
+	// llenarcoordenadas(coordenadas,0,20,0.5);
 	funcion funcion1 =generateF_INewton(coordenadas);
-	llenararchivo(funcion1,-2,22);
+	// evaluar_funcion(fun,-2);
+	std::cout << "evaluado "<<evaluar_funcion(funcion1,-2) << '\n';
+	// llenararchivo(funcion1,-2,22);
 
 	return 0;
 }

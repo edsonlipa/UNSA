@@ -1,0 +1,3 @@
+g++ -c kmeans.cpp
+g++ kmeans.o -o kms -lsfml-graphics -lsfml-window -lsfml-system
+./kms

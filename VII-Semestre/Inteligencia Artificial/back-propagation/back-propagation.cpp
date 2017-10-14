@@ -113,7 +113,7 @@ void print_data(matrix di,matrix dout){
 	}
   std::cout << count<<" registros" << '\n';
 
-  }
+}
 matrix create_layer(float n_neu,float n_input) {
   matrix matriz(n_neu,vecf(n_input));
   for (size_t i = 0; i < n_neu; i++) {
