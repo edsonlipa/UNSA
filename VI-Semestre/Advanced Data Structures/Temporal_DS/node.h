@@ -23,6 +23,7 @@ public:
     mod log;
     Node<T> * back_ptr;
     Node<T>(const Node<T>& copyNode) : data(copyNode.data),back_ptr(copyNode.back_ptr) {sons[0]=copyNode.sons[0];sons[1]=copyNode.sons[1];}
+
     Node<T>& operator=(const Node<T>&);
     Node<T>(const T& data):data(data),back_ptr(nullptr){sons[0]=nullptr;sons[1]=nullptr;}
 

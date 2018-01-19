@@ -3,10 +3,8 @@ CONFIG += console c++11
 CONFIG -= app_bundle
 CONFIG -= qt
 
-SOURCES += main.cpp \
-    node.cpp \
-    temporal_ds.cpp
+SOURCES += main.cpp
 
 HEADERS += \
     node.h \
-    temporal_ds.h
+    rangue_t.h
